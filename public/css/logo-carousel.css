@@ -1,0 +1,99 @@
+#slider {
+    height: 280px;
+    margin-top:30px;
+    background-color: white;
+    padding-top: 20px;
+
+}
+
+.subcontainer {
+    width: 85%;
+    margin: auto;
+}
+
+.slide-img {
+    width: 100%;
+    height: 275px;
+    border-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+
+}
+
+.img-1 {
+    background-image: url('/img/brands/apple.svg');
+    width: 57.44px;
+    height: 70.74px;
+}
+.img-2 {
+    background-image: url('/img/brands/acer.svg');
+    width: 125.3px;
+    margin-top: 25px;
+    height: 30.67px;
+}
+.img-3 {
+    background-image: url('/img/brands/hp.svg');
+    width: 70.74px;
+    height: 70.74px;
+}
+.img-4 {
+    background-image: url('/img/brands/lenovo.svg');
+    width: 125.3px;
+    height: 26.3px;
+    margin-top: 25px;
+}
+.img-5 {
+    background-image: url('/img/brands/lg.svg');
+    width: 125.3px;
+    height: 59.39px;
+}
+.img-6 {
+    background-image: url('/img/brands/asus.svg');
+    width: 125.3px;
+    height: 21.88px;
+    margin-top: 25px;
+}
+.img-7 {
+    background-image: url('/img/brands/dell.svg');
+    width: 70.47px;
+    height: 70.47px;
+}
+.img-8 {
+    background-image: url('/img/brands/intel.svg');
+    width: 106.48px;
+    height: 70.47px;
+}
+.img-9 {
+    background-image: url('/img/brands/microsoft.svg');
+    width: 125.3px;
+    height: 26.75px;
+    margin-top: 25px;
+}
+.img-10 {
+    background-image: url('/img/brands/sony.svg');
+    width: 125.3px;
+    height: 22.47px;
+    margin-top: 25px;
+}
+.img-11 {
+    background-image: url('/img/brands/samsung.svg');
+    width: 125.3px;
+    height: 22.47px;
+    margin-top: 25px;
+}
+.img-12 {
+    background-image: url('/img/brands/canon.svg');
+    width: 125.3px;
+    height: 26.2px;
+    margin-top: 25px;
+}
+@media(max-width:1600px) {
+    .container {
+        width:100%;
+    }
+}
+
+#slider button {
+    display: none;
+}

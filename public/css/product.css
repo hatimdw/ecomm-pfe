@@ -1,0 +1,62 @@
+.h1-product {
+    padding:15px;
+    font-size: 37px;
+}
+
+.product-container {
+    background-color: white;
+    min-height: 500px;
+    width: 1130px;
+}
+.productc1 {
+    max-width: 800px;
+    padding: 50px;
+}
+.productc2 {
+    margin-top: 25px;
+}
+.imgrow {
+    width: 760px;
+    height: 560px;
+}
+.c2-h1 {
+    color: black;
+}
+.delivery-card {
+    width: 358px;
+    height: 113px;
+    background-color: #F8F8F8;
+
+}
+
+.delivery {
+    height: 50%;
+    padding: 15px;
+}
+.deliverypt1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.delivery-header {
+    font-weight: bold;
+    font-size: .950rem;
+    line-height: 1.5;
+    padding-left: 5px;
+}
+.delivery-para {
+    font-size: .7875rem;
+    line-height: 1.2;
+    color: #999!important;
+}
+.cart-price {
+    color: #666666;
+    font-weight: 500;
+    line-height: 1;
+    font-size: 32px;
+
+}
+.cart-btn {
+    margin-top: 40px;
+    padding: 10px 30px;
+    color: black;
+}

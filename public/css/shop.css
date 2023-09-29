@@ -1,0 +1,58 @@
+.compa {
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.247);
+}
+
+.h1-shop {
+    padding: 50px 0px;
+
+}
+
+
+.comp1 {
+    height: 1000px;
+    background-color: #fff;
+}
+
+.comp2 {
+    min-height: 100px;
+    background-color: #fff;
+
+}
+
+.h5-comp1 {
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    color: #333333;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+.alink-shop
+{
+    padding-left: 35px;
+    color: #666666;
+    font-family: 'Roboto';
+}
+.card-shop {
+    width: 269px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 429.19;
+    list-style: none;
+
+}
+
+#shop-ul
+{
+    list-style: none;
+}
+#shop-ul li {
+    margin-left: -30px;
+    margin-bottom: 15px;
+}
+
+.sorting {
+    margin-left: 990px;
+    margin-bottom: 10px;
+}
