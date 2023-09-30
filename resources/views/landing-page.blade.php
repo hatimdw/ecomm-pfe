@@ -45,14 +45,14 @@
     <div class="row row-cols-4">
     @foreach($products as $product)
     <div class="col card border border-light-subtle">
-      <a href="">
-        <img src="{{ asset($product->image)}}"
+      <a href="{{ route('shop.show', $product->slug) }}">
+        <img src="{{asset('img/products/'.$product->slug.'.jpg')}}"
          class="img-card card-img-top" alt="..."></a>
 
 
       <div class="card-body">
         <h5 class="card-title">{{$product->title}}</h5>
-        <a href="">
+        <a href="{{ route('shop.show', $product->slug) }}">
             <p class="card-text">{{$product->name}}</p>
         <div class="card-price"> {{$product->format()}} DH</div></a>
       </div>
@@ -62,7 +62,7 @@
     </div>
 
 
-    <div class="a-shop"><a href=""
+    <div class="a-shop"><a href="{{route('shop.index')}}"
         class="a-shop-style text-decoration-none link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">SHOP
         ALL <span><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
             class="bi bi-chevron-right" viewBox="0 0 20 20">

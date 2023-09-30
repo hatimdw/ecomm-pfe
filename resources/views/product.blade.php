@@ -25,7 +25,7 @@
         <h1 class="text-center h1-product">{{ $product->name }}</h1>
         <div class="product-container row ">
             <div class="productc1 col-8">
-                <img src="{{asset('img/products/1/laptop-1.jpg')}}" class="img-fluid imgrow" alt="...">
+                <img src="{{asset('img/products/'.$product->slug.'.jpg')}}" class="img-fluid imgrow" alt="...">
             </div>
             <div class="productc2 col-4">
                 <h3>{{ $product->title }}</h3>
@@ -52,11 +52,37 @@
                     </div>
                 </div>
 
-                    <button type="submit" class="btn btn-primary btn-lg mt-4">Large button</button>
+                <form action="{{route('cart.store')}}" method="Post">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $product->id }}">
+                    <input type="hidden" name="name" value="{{ $product->name }}">
+                    <input type="hidden" name="price" value="{{ $product->price }}">
+
+                    <button type="submit" class="btn btn-primary btn-lg mt-4">Add to cart</button>
+
+                </form>
 
 
             </div>
         </div>
+        <h3>You might also like...</h3>
+        <div class="shop container ">
+            <div class="row row-cols-4">
+            @foreach($randomProducts as $product)
+            <div class="col card border border-light-subtle">
+              <a href="{{ route('shop.show', $product->slug) }}">
+              <img src="{{ asset('img/products/' .$product->slug.'.jpg') }}" class="img-card1 card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">{{$product->title}}</h5>
+                <a href="{{ route('shop.show',$product->slug) }}"><p class="card-text">{{$product->name}}</p></a>
+                <p class="card-price">{{$product->format()}} DH</p>
+              </div>
+            </div>
+              @endforeach
+            </div>
+            </div>
+    </div>
 
 
 @endsection

@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-white sticky-top">
         <div class="navbar-custom container-fluid">
-          <a class="navbar-brand" href=""><img width="90" src="{{ asset('img/logo.svg') }}" alt=""></a>
+          <a class="navbar-brand" href="{{route('landing-page')}}"><img width="90" src="{{ asset('img/logo.svg') }}" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav col-9">
               <li class="nav-item">
-                <a class="nav-link " href="">SHOP</a>
+                <a class="nav-link " href="{{route('shop.index')}}">SHOP</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="#">brands</a>
@@ -43,7 +43,7 @@
                 <li class="lg"><a href="" class="nav-link" >Sign Up</a></li>
                 <li class="lg"><a href="" class="nav-link" >Login</a></li>
               <li class="nav-item">
-                <a class="nav-link" href=""><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                <a class="nav-link" href="{{ route('cart.index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45"
                     fill="currentColor" class="bi bi-bag" viewBox="0 0 20 20">
                     <path
                       d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
@@ -113,7 +113,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
         <script src="{{ asset('js/logo-carousel.js')}}"></script>
-        
+
         @yield('extra-js')
 </body>
 </html>

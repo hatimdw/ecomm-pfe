@@ -16,7 +16,11 @@ class ShopController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
+        $randomProducts = Product::where('slug', '!=',$slug)->randomProducts()->get();
 
-        return view('product')->with('product',$product);
+        return view('product')->with('product')->with([
+            'product' => $product,
+            'randomProducts' => $randomProducts
+        ]);
     }
 }

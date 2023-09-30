@@ -12,5 +12,9 @@ class Product extends Model
     {
         return number_format($this->price);
     }
+    public function scopeRandomProducts($query)
+    {
+        return $query->inRandomOrder()->take(4);
+    }
 
 }

@@ -47,19 +47,20 @@
 
                     @foreach($products as $product)
                     <div class="col card-shop border border-light-subtle">
-                        <a href=""><img
-                                src="{{ asset('img/products/1/1-add-3-small.jpg') }}" class="img-card1 card-img-top"
+                        <a href="{{ route('shop.show', $product->slug) }}"><img
+                                src="{{asset('img/products/'.$product->slug.'.jpg')}}"
+                                 class="img-card1 card-img-top"
                                 alt="..."></a>
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->title }}</h5>
-                            <a href="">
+                            <a href="{{ route('shop.show', $product->slug) }}">
                                 <p class="card-text">{{ $product->name }}</p>
                             </a>
                             <p class="card-price">{{ $product->format() }} DH</p>
                         </div>
                     </div>
 
-                        
+
                     @endforeach
                 </div>
 
