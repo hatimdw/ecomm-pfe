@@ -77,7 +77,7 @@
                           </select>
                     </div>
                     <div class="cart-el cart-el3 card-price">
-                        <p>{{$item->model->price}} DH</p>
+                        <p>{{ format($item->model->price) }} DH</p>
                     </div>
                     <div class="cart-el cart-el4">
 
@@ -104,7 +104,52 @@
             </div>
         </div>
 
+        <div class="cartsh2 col-5">
+            <div class="row">
+                <h5 class="col">Subtotal</h5>
+                <h5 class="col">{{ Cart::subtotal() }} DH</h5>
+            </div>
+            <div class="row">
+                <h5 class="col">Tax (20%)</h5>
+                <h5 class="col">{{ Cart::tax() }} DH</h5>
+            </div>
+            <hr>
+            <div class="row">
+                <h5 class="col">Total</h5>
+                <h5 class="col">{{ Cart::total() }} DH</h5>
+            </div>
+            <a href=""><button class="btn btn-large btn-primary">Checkout</button></a>
+
+        </div>
+
+    </div>
 
 
+    </div>
+
+@section('extra-js')
+    <script>
+        (function() {
+            const classname = document.querySelectorAll('.quantity');
+
+            Array.from(classname).forEach(function(element) {
+                element.addEventListener('change', function() {
+                    const id = element.getAttribute('data-id')
+                    axios.patch(`/cart/${id}`, {
+                            quantity: this.value
+                        })
+                        .then(function(response) {
+                            //console.log(response);
+                            window.location.href= "{{ route('cart.index') }}"
+                        })
+                        .catch(function(error) {
+                            console.log(error);
+                        });
+                })
+            })
+        })();
+    </script>
+
+@endsection
 
 @endsection
