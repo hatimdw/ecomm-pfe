@@ -32,6 +32,8 @@ Route::get('empty', function() {
     Cart::destroy();
 });
 
+Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
 
-Route::view('/checkout', 'checkout');
+
+
 Route::view('thankyou', 'thankyou');

@@ -4,7 +4,8 @@
 
 function format($price)
 {
-    return number_format($price);
+
+    return number_format((float)$price);
 }
 
 function productImage($path)

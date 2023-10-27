@@ -118,7 +118,7 @@
                 <h5 class="col">Total</h5>
                 <h5 class="col">{{ Cart::total() }} DH</h5>
             </div>
-            <a href=""><button class="btn btn-large btn-primary">Checkout</button></a>
+            <a href="{{route('checkout.index')}}"><button class="btn btn-large btn-primary">Checkout</button></a>
 
         </div>
 
