@@ -33,7 +33,9 @@ Route::get('empty', function() {
 });
 
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'App\Http\Controllers\CheckoutController@store')->name('checkout.store');
 
 
 
 Route::view('thankyou', 'thankyou');
+Route::get('/thankyou','App\Http\Controllers\ConfirmationController@index')->name('confirmation.index');

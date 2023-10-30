@@ -121,12 +121,12 @@
     </div>
     <div class="col-md-7 col-lg-8">
       <h4 class="mb-3">Billing address</h4>
-      <form action="" id="payment-form" method="POST">
+      <form action="{{ route('checkout.store')}}" id="payment-form" method="POST">
         {{ csrf_field() }}
         <div class="row g-3">
           <div class="col-12">
             <label for="name">Name on Card</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+            <input type="text" class="form-control" id="name_on_card" name="name" value="{{ old('name') }}" required>
           </div>
 
 
@@ -246,10 +246,10 @@
 
               var options = {
                 name: document.getElementById('name_on_card').value,
-                address_line1: document.getElementById('address').value,
-                address_city: document.getElementById('city').value,
-                address_state: document.getElementById('province').value,
-                address_zip: document.getElementById('postalcode').value
+                address_line1: document.getElementById('email').value,
+                address_city: document.getElementById('address').value,
+                address_state: document.getElementById('city').value,
+                address_zip: document.getElementById('province').value
               }
 
               stripe.createToken(card, options).then(function(result) {

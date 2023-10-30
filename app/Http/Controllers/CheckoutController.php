@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
+
 
 class CheckoutController extends Controller
 {
@@ -27,7 +30,18 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $charge = Stripe::charges()->create([
+                'amount' => Cart::total(),
+                'currency' => 'MAD',
+                'source' => $request->stripeToken,
+                'description' => 'Order',
+                'receipt_email' => $request->email,
+            ]);
+            return redirect()->route('confirmation.index')->with('success_message',
+             'Thank you your payment has been successfully accepted');
+        } catch(Exception $e) {
+        }
     }
 
     /**
