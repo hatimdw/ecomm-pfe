@@ -77,7 +77,7 @@
                           </select>
                     </div>
                     <div class="cart-el cart-el3 card-price">
-                        <p>{{ format($item->model->price) }} DH</p>
+                        <p>{{ format($item->subtotal) }} DH</p>
                     </div>
                     <div class="cart-el cart-el4">
 
@@ -139,11 +139,12 @@
                             quantity: this.value
                         })
                         .then(function(response) {
-                            //console.log(response);
-                            window.location.href= "{{ route('cart.index') }}"
+                            console.log(response);
+                           window.location.href= "{{ route('cart.index') }}"
                         })
                         .catch(function(error) {
                             console.log(error);
+                            window.location.href= "{{ route('cart.index') }}"
                         });
                 })
             })

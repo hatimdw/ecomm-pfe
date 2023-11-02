@@ -38,7 +38,7 @@ class CartController extends Controller
         if($duplicates->isNotEmpty()) {
             return redirect()->route('cart.index')->with('success_message','Item is already in cart');
         }
-        
+
         Cart::add($request->id,$request->name,1,$request->price)->associate('\App\Models\Product');
         return redirect()->route('cart.index')->with('success_message','Item was added to ur cart');
     }
@@ -64,7 +64,16 @@ class CartController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'required|numeric|between:1,5'
+        ]);
+        if ($validator->fails()) {
+            session()->flash('errors',collect(['quantity must b between 1 & 5']));
+            return response()->json(['success' => false], 400);
+        }
+        Cart::update($id, $request->quantity);
+        session()->flash('success_message','quantity updated');
+        return response()->json(['success' => true]);
     }
 
     /**
